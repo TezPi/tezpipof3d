@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gallery — Tezpi Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Fredoka:wght@400;500;600;700&family=Patrick+Hand&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ========== NAV ========== -->
+<header class="nav" id="nav">
+  <a href="index.html" class="logo">tezpi<span class="logo-star">✦</span></a>
+  <nav aria-label="Primary">
+    <a href="index.html">Home</a>
+    <a href="index.html#work">Work</a>
+    <a href="experience.html">Experience</a>
+    <a href="gallery.html" class="nav-active">Gallery</a>
+    <a href="index.html#contact">Say hi ✉️</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- ========== PAGE HERO ========== -->
+<section class="page-hero">
+  <div class="doodle-layer" aria-hidden="true">
+    <span class="doodle star-lg" style="top:20%;left:7%">✦</span>
+    <span class="doodle star-sm" style="top:65%;right:9%">✧</span>
+    <span class="doodle circle-o" style="top:30%;right:28%"></span>
+    <span class="doodle plus" style="bottom:25%;left:18%">+</span>
+  </div>
+  <div class="wrap">
+    <div class="section-eyebrow reveal">✦ &nbsp;Design work</div>
+    <h1 class="page-hero-title reveal">Mockup <span class="squiggle-word">Gallery</span></h1>
+    <p class="page-hero-sub reveal">Screens, flows, and UI concepts across mobile, web, and game interfaces.</p>
+  </div>
+</section>
+
+<!-- ========== FILTER + GRID ========== -->
+<section id="gallery-section">
+  <div class="wrap">
+    <div class="filter-bar reveal" id="filter-bar" role="group" aria-label="Filter mockups by category"></div>
+    <div class="gallery-grid" id="gallery-grid" aria-live="polite"></div>
+  </div>
+</section>
+
+</main>
+
+<!-- ========== LIGHTBOX ========== -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Mockup detail" hidden>
+  <button class="lightbox-close" id="lightbox-close" aria-label="Close lightbox">×</button>
+  <div class="lightbox-inner">
+    <div class="lightbox-mockup" id="lightbox-mockup"></div>
+    <div class="lightbox-info">
+      <span class="lightbox-tag" id="lightbox-tag"></span>
+      <h2 class="lightbox-title" id="lightbox-title"></h2>
+      <p class="lightbox-screen" id="lightbox-screen"></p>
+      <p class="lightbox-desc" id="lightbox-desc"></p>
+      <div class="lightbox-tags" id="lightbox-tags"></div>
+      <div class="lightbox-nav">
+        <button class="btn btn-outline btn-sm" id="lb-prev">← Prev</button>
+        <button class="btn btn-outline btn-sm" id="lb-next">Next →</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span class="footer-logo">tezpi✦</span>
+    <span>Crafted with ♥ · Biên Hòa, 2025</span>
+  </div>
+</footer>
+
+<script type="module" src="gallery.js"></script>
+</body>
+</html>

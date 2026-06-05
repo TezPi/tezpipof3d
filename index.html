@@ -3,127 +3,171 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>TEZPI — Issue #01 · Product Design Portfolio</title>
-
-<!-- Distinctive comic-genre type system (not generic-AI defaults) -->
+<title>Tezpi — UI/UX Design Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bangers&family=Nunito:ital,wght@0,400;0,700;0,800;1,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="styles.css" />
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Fredoka:wght@400;500;600;700&family=Patrick+Hand&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
 
-<!-- ============ COVER / LOADER ============ -->
-<div id="cover" aria-hidden="true">
-  <div class="cover-inner">
-    <div class="issue">ISSUE&nbsp;#01 · PRODUCT&nbsp;DESIGN</div>
-    <h1>TEZPI</h1>
-    <div class="bar"><i id="coverBar"></i></div>
-    <div class="hint">LOADING ARTWORK…</div>
-  </div>
-</div>
+<!-- SVG filters for hand-drawn wobble effect -->
+<svg width="0" height="0" aria-hidden="true" style="position:absolute;overflow:hidden">
+  <defs>
+    <filter id="wobble">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" seed="8" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+</svg>
 
-<!-- ============ NAV ============ -->
+<!-- ========== NAV ========== -->
 <header class="nav" id="nav">
-  <a href="#hero" class="logo" data-scroll>TEZ<b>PI</b></a>
+  <a href="#hero" class="logo">tezpi<span class="logo-star">✦</span></a>
   <nav aria-label="Primary">
-    <a href="#about" data-scroll>Origin</a>
-    <a href="#work" data-scroll>Issues</a>
-    <a href="#contact" data-scroll>Team&nbsp;Up</a>
+    <a href="#about">About</a>
+    <a href="#work">Work</a>
+    <a href="experience.html">Experience</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="#contact">Say hi ✉️</a>
   </nav>
 </header>
 
 <main>
 
-<!-- ============ HERO ============ -->
+<!-- ========== HERO ========== -->
 <section id="hero">
+  <!-- floating background doodles -->
+  <div class="doodle-layer" aria-hidden="true">
+    <span class="doodle star-lg" style="top:10%;left:6%">✦</span>
+    <span class="doodle star-sm" style="top:22%;right:14%">✧</span>
+    <span class="doodle circle-o" style="top:60%;left:3%"></span>
+    <span class="doodle circle-o sm" style="top:15%;right:32%"></span>
+    <span class="doodle dot" style="top:40%;left:28%"></span>
+    <span class="doodle dot" style="top:72%;right:20%"></span>
+    <span class="doodle zigzag" style="bottom:20%;left:8%"></span>
+    <span class="doodle plus" style="top:50%;right:6%">+</span>
+  </div>
+
   <div class="wrap hero-grid">
     <div class="hero-left">
-      <span class="kicker eyebrow">UX/UI · Game UI/HUD · Biên Hòa, VN</span>
-      <h2 class="hero-headline">
-        <span class="red">DESIGN</span> THAT<br>BENDS <span class="blue">BEHAVIOR</span>.
-      </h2>
-      <div class="role">Product Designer <span class="dot">·</span> Systems Thinker <span class="dot">·</span> Ex-Engineer</div>
-      <p class="hero-desc">Built at the intersection of visual craft, behavioral psychology, and engineering logic — interfaces that look sharp and convert harder.</p>
-      <div class="hero-actions">
-        <a href="#work" class="cta" data-scroll data-magnetic>SEE THE WORK <span class="arrow">↓</span></a>
-        <a href="#contact" class="cta cta--ink" data-scroll data-magnetic>TEAM UP</a>
+      <div class="badge reveal">✏️ &nbsp;Open to new projects</div>
+
+      <h1 class="hero-title">
+        <span class="line-hi reveal">Hi! I'm</span>
+        <span class="line-name reveal"><span class="name-highlight">Tezpi</span></span>
+        <span class="line-tagline reveal">I design things<br>people <em>actually love.</em></span>
+      </h1>
+
+      <p class="hero-meta reveal">
+        UI/UX · Game UI/HUD · Design Systems<br>
+        📍 Biên Hòa, Vietnam
+      </p>
+
+      <div class="hero-actions reveal">
+        <a href="#work" class="btn btn-primary">See my work →</a>
+        <a href="#contact" class="btn btn-ghost">Let's chat ☺</a>
+      </div>
+
+      <div class="social-row reveal">
+        <span class="social-label">Find me →</span>
+        <a href="#" class="social-chip">Behance</a>
+        <a href="#" class="social-chip">LinkedIn</a>
+        <a href="mailto:hello@tezpi.design" class="social-chip">Email</a>
       </div>
     </div>
 
-    <div class="hero-right">
-      <div class="stage">
-        <div class="panel">
-          <div class="halftone"></div>
-          <canvas id="hero-canvas" aria-label="Interactive 3D hero object — drag or move pointer to rotate" role="img"></canvas>
-          <div class="fallback3d" id="fallback3d">
-            <div><b>3D OFFLINE</b><br><span style="font-family:var(--f-mono);font-weight:700;font-size:.8rem">WebGL unavailable — swap in the Meshy GLB on a supported device.</span></div>
-          </div>
-          <span class="burst stamp">DRAG&nbsp;ME!</span>
-          <span class="caption">HERO ASSET · replace with /Meshy GLB</span>
+    <div class="hero-right reveal">
+      <div class="canvas-frame">
+        <span class="av-doodle av-star-tl" aria-hidden="true">✦</span>
+        <span class="av-doodle av-star-br" aria-hidden="true">✧</span>
+        <div class="av-bubble" aria-hidden="true">Hi! 👋</div>
+        <div class="avatar-tilt-wrap" id="avatar-tilt">
+          <img class="avatar-img" id="avatar-img" src="assets/avatar.png" alt="Tezpi — UI/UX Designer" />
         </div>
-        <!-- draggable comic stickers (GSAP Draggable) -->
-        <span class="sticker s1" data-drag style="left:-6%;top:8%">POW!</span>
-        <span class="sticker s2" data-drag style="right:-4%;bottom:18%">SHIP&nbsp;IT</span>
-        <span class="sticker s3" data-drag style="left:10%;bottom:-6%">60FPS</span>
+        <div class="avatar-shadow" aria-hidden="true"></div>
+        <div class="avatar-hint" aria-hidden="true">
+          <span>hover me!</span>
+          <svg width="36" height="24" viewBox="0 0 36 24" fill="none">
+            <path d="M2,12 Q18,2 34,14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M28,10 L34,14 L30,20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ ABOUT / ORIGIN ============ -->
+<!-- ========== ABOUT ========== -->
 <section id="about">
   <div class="wrap">
-    <div class="section-head">
-      <span class="kicker">CHAPTER 1</span>
-      <h3 class="reveal">THE ORIGIN STORY</h3>
+    <div class="section-eyebrow reveal">✦ &nbsp;About me</div>
+    <h2 class="section-title reveal">The <span class="squiggle-word">story</span> so far</h2>
+
+    <div class="powers-grid">
+      <div class="power-card reveal">
+        <div class="power-icon">🧠</div>
+        <h3>Behavioral UX</h3>
+        <p>Habit loops & triggers engineered to cut friction and lift conversion.</p>
+      </div>
+      <div class="power-card accent-yellow reveal">
+        <div class="power-icon">🎮</div>
+        <h3>Game UI / HUD</h3>
+        <p>High-density, high-feedback interfaces that stay legible under pressure.</p>
+      </div>
+      <div class="power-card accent-teal reveal">
+        <div class="power-icon">📐</div>
+        <h3>Design Systems</h3>
+        <p>Tokens, variables, auto-layout — scalable from Figma to production code.</p>
+      </div>
+      <div class="power-card accent-coral reveal">
+        <div class="power-icon">🔧</div>
+        <h3>Dev Handoff</h3>
+        <p>Engineering fluency means specs that ship without the back-and-forth.</p>
+      </div>
     </div>
-    <div class="about-grid">
-      <div class="reveal">
-        <div class="narration">
-          <span class="lead">Meanwhile, in Biên Hòa…</span>
-          A designer who started in <b>software engineering</b> learned to speak both languages — pixels and production. The result: design that survives the handoff and behaves exactly as intended once it ships.
-        </div>
-        <div class="bubble" style="margin-top:26px">
-          “I design at the seam between <b>aesthetics, psychology, and systems</b> — where good UI quietly becomes good business.”
+
+    <div class="bio-row">
+      <div class="bio-text reveal">
+        <p>I started in <strong>software engineering</strong>, then fell in love with the design side. Now I work at the seam of <strong>aesthetics, psychology, and systems</strong> — crafting interfaces that look great and actually convert.</p>
+        <div class="tags-row">
+          <span class="tag">Figma</span>
+          <span class="tag">Prototyping</span>
+          <span class="tag">User Research</span>
+          <span class="tag">Three.js</span>
+          <span class="tag">Design Tokens</span>
+          <span class="tag">Motion Design</span>
         </div>
       </div>
-      <div class="reveal">
-        <div class="powers">
-          <div class="power"><div class="num">PWR-01</div><h4>Behavioral UX</h4><p>Habit loops &amp; triggers engineered to cut friction and lift conversion.</p></div>
-          <div class="power"><div class="num">PWR-02</div><h4>Design Systems</h4><p>Tokens, variables, auto-layout — scalable from Figma to code.</p></div>
-          <div class="power"><div class="num">PWR-03</div><h4>Game UI / HUD</h4><p>High-density, high-feedback interfaces that stay legible under pressure.</p></div>
-          <div class="power"><div class="num">PWR-04</div><h4>Dev Handoff</h4><p>Engineering fluency → specs that ship without the back-and-forth.</p></div>
-        </div>
+      <div class="sticky-note reveal">
+        "Good design is when users don't notice it — they just smile ✨"
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ WORK / FEATURED ISSUES ============ -->
+<!-- ========== WORK ========== -->
 <section id="work">
   <div class="wrap">
-    <div class="section-head">
-      <span class="kicker">FEATURED ISSUES</span>
-      <h3 class="reveal">SELECTED WORK</h3>
-    </div>
-    <div class="work-grid" id="workGrid" aria-live="polite"><!-- rendered from data --></div>
+    <div class="section-eyebrow reveal">✦ &nbsp;Selected work</div>
+    <h2 class="section-title reveal">Things I've <span class="squiggle-word">built</span></h2>
+    <div class="work-grid" id="workGrid" aria-live="polite"></div>
   </div>
 </section>
 
-<!-- ============ CONTACT ============ -->
+<!-- ========== CONTACT ========== -->
 <section id="contact">
   <div class="wrap">
-    <div class="panel contact-card reveal">
-      <div class="halftone"></div>
-      <div class="big">LET'S TEAM&nbsp;UP!</div>
-      <p>Got a product that deserves an interface people actually want to use? Let's make the next issue together.</p>
+    <div class="contact-box reveal">
+      <span class="corner-star tl" aria-hidden="true">✦</span>
+      <span class="corner-star tr" aria-hidden="true">✧</span>
+      <div class="section-eyebrow" style="text-align:center">✦ &nbsp;Let's work together</div>
+      <h2 class="contact-title">Got a project<br>in mind? <span class="wave-hand">👋</span></h2>
+      <p class="contact-sub">Whether it's a product redesign, a brand-new app, or just a hello — I'm always happy to chat!</p>
       <div class="contact-actions">
-        <a href="mailto:hello@tezpi.design" class="cta" data-magnetic>EMAIL ME <span class="arrow">→</span></a>
-        <a href="#" class="cta cta--blue" data-magnetic>BEHANCE</a>
-        <a href="#" class="cta cta--ink" data-magnetic>LINKEDIN</a>
+        <a href="mailto:hello@tezpi.design" class="btn btn-primary btn-lg">Email me ✉️</a>
+        <a href="#" class="btn btn-outline">Behance</a>
+        <a href="#" class="btn btn-outline">LinkedIn</a>
       </div>
     </div>
   </div>
@@ -132,22 +176,12 @@
 </main>
 
 <footer>
-  <span class="end">END OF ISSUE #01 — TO BE CONTINUED…</span>
-  TEZPI · Product Designer · Biên Hòa, Đồng Nai · Built with GSAP + Three.js
+  <div class="wrap footer-inner">
+    <span class="footer-logo">tezpi✦</span>
+    <span>Crafted with ♥ · Biên Hòa, 2025</span>
+  </div>
 </footer>
 
-<!-- backdrop for expanded card -->
-<div id="backdrop" aria-hidden="true"></div>
-
-<!-- ============ LIBRARIES (CDN) ============ -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Draggable.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js"></script>
-
-<script src="script.js"></script>
+<script type="module" src="script.js"></script>
 </body>
 </html>

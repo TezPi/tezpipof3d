@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title id="page-title">Project — Tezpi Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Fredoka:wght@400;500;600;700&family=Patrick+Hand&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ========== NAV ========== -->
+<header class="nav" id="nav">
+  <a href="index.html" class="logo">tezpi<span class="logo-star">✦</span></a>
+  <nav aria-label="Primary">
+    <a href="index.html">Home</a>
+    <a href="index.html#work">Work</a>
+    <a href="experience.html">Experience</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="index.html#contact">Say hi ✉️</a>
+  </nav>
+</header>
+
+<main id="project-main">
+
+  <!-- ========== PROJECT HERO ========== -->
+  <section class="proj-hero" id="proj-hero">
+    <div class="doodle-layer" aria-hidden="true">
+      <span class="doodle star-lg" style="top:18%;left:5%">✦</span>
+      <span class="doodle star-sm" style="top:65%;right:8%">✧</span>
+      <span class="doodle circle-o" style="top:25%;right:22%"></span>
+      <span class="doodle zigzag" style="bottom:18%;left:10%"></span>
+    </div>
+    <div class="wrap">
+      <a href="index.html#work" class="back-link reveal">← Back to all work</a>
+      <div class="proj-hero-grid">
+        <div class="proj-hero-left">
+          <div class="proj-emoji reveal" id="proj-emoji"></div>
+          <h1 class="proj-title reveal" id="proj-title"></h1>
+          <p class="proj-tagline reveal" id="proj-tagline"></p>
+          <div class="proj-meta reveal" id="proj-meta"></div>
+          <div class="proj-tools reveal" id="proj-tools"></div>
+        </div>
+        <div class="proj-hero-right reveal">
+          <div class="proj-hero-mockup" id="proj-hero-mockup"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== OVERVIEW ========== -->
+  <section class="proj-section proj-overview" id="proj-overview">
+    <div class="wrap">
+      <div class="section-eyebrow reveal">✦ &nbsp;Overview</div>
+      <p class="proj-overview-text reveal" id="proj-overview-text"></p>
+      <div class="overview-split">
+        <div class="overview-card problem reveal" id="proj-problem"></div>
+        <div class="overview-arrow" aria-hidden="true">
+          <svg width="60" height="40" viewBox="0 0 60 40" fill="none">
+            <path d="M2,20 Q30,4 58,20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M50,12 L58,20 L50,28" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="overview-card solution reveal" id="proj-solution"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROCESS ========== -->
+  <section class="proj-section proj-process-section" id="proj-process-section">
+    <div class="wrap">
+      <div class="section-eyebrow reveal">✦ &nbsp;Design process</div>
+      <h2 class="section-title reveal">How I <span class="squiggle-word">approached</span> it</h2>
+      <div class="process-steps" id="proj-process"></div>
+    </div>
+  </section>
+
+  <!-- ========== SCREENS ========== -->
+  <section class="proj-section proj-screens-section" id="proj-screens-section">
+    <div class="wrap">
+      <div class="section-eyebrow reveal">✦ &nbsp;Key screens</div>
+      <h2 class="section-title reveal">Selected <span class="squiggle-word">screens</span></h2>
+      <div class="proj-screens-grid" id="proj-screens"></div>
+    </div>
+  </section>
+
+  <!-- ========== OUTCOMES ========== -->
+  <section class="proj-section proj-outcomes-section" id="proj-outcomes-section">
+    <div class="wrap">
+      <div class="section-eyebrow reveal">✦ &nbsp;Impact</div>
+      <h2 class="section-title reveal">The <span class="squiggle-word">results</span></h2>
+      <div class="outcomes-grid" id="proj-outcomes"></div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECT NAVIGATION ========== -->
+  <section class="proj-nav-section">
+    <div class="wrap proj-nav-inner" id="proj-nav"></div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span class="footer-logo">tezpi✦</span>
+    <span>Crafted with ♥ · Biên Hòa, 2025</span>
+  </div>
+</footer>
+
+<script type="module" src="project.js"></script>
+</body>
+</html>
