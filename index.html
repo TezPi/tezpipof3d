@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TEZPI — Issue #01 · Product Design Portfolio</title>
+
+<!-- Distinctive comic-genre type system (not generic-AI defaults) -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bangers&family=Nunito:ital,wght@0,400;0,700;0,800;1,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+<!-- ============ COVER / LOADER ============ -->
+<div id="cover" aria-hidden="true">
+  <div class="cover-inner">
+    <div class="issue">ISSUE&nbsp;#01 · PRODUCT&nbsp;DESIGN</div>
+    <h1>TEZPI</h1>
+    <div class="bar"><i id="coverBar"></i></div>
+    <div class="hint">LOADING ARTWORK…</div>
+  </div>
+</div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <a href="#hero" class="logo" data-scroll>TEZ<b>PI</b></a>
+  <nav aria-label="Primary">
+    <a href="#about" data-scroll>Origin</a>
+    <a href="#work" data-scroll>Issues</a>
+    <a href="#contact" data-scroll>Team&nbsp;Up</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section id="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-left">
+      <span class="kicker eyebrow">UX/UI · Game UI/HUD · Biên Hòa, VN</span>
+      <h2 class="hero-headline">
+        <span class="red">DESIGN</span> THAT<br>BENDS <span class="blue">BEHAVIOR</span>.
+      </h2>
+      <div class="role">Product Designer <span class="dot">·</span> Systems Thinker <span class="dot">·</span> Ex-Engineer</div>
+      <p class="hero-desc">Built at the intersection of visual craft, behavioral psychology, and engineering logic — interfaces that look sharp and convert harder.</p>
+      <div class="hero-actions">
+        <a href="#work" class="cta" data-scroll data-magnetic>SEE THE WORK <span class="arrow">↓</span></a>
+        <a href="#contact" class="cta cta--ink" data-scroll data-magnetic>TEAM UP</a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="stage">
+        <div class="panel">
+          <div class="halftone"></div>
+          <canvas id="hero-canvas" aria-label="Interactive 3D hero object — drag or move pointer to rotate" role="img"></canvas>
+          <div class="fallback3d" id="fallback3d">
+            <div><b>3D OFFLINE</b><br><span style="font-family:var(--f-mono);font-weight:700;font-size:.8rem">WebGL unavailable — swap in the Meshy GLB on a supported device.</span></div>
+          </div>
+          <span class="burst stamp">DRAG&nbsp;ME!</span>
+          <span class="caption">HERO ASSET · replace with /Meshy GLB</span>
+        </div>
+        <!-- draggable comic stickers (GSAP Draggable) -->
+        <span class="sticker s1" data-drag style="left:-6%;top:8%">POW!</span>
+        <span class="sticker s2" data-drag style="right:-4%;bottom:18%">SHIP&nbsp;IT</span>
+        <span class="sticker s3" data-drag style="left:10%;bottom:-6%">60FPS</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT / ORIGIN ============ -->
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">CHAPTER 1</span>
+      <h3 class="reveal">THE ORIGIN STORY</h3>
+    </div>
+    <div class="about-grid">
+      <div class="reveal">
+        <div class="narration">
+          <span class="lead">Meanwhile, in Biên Hòa…</span>
+          A designer who started in <b>software engineering</b> learned to speak both languages — pixels and production. The result: design that survives the handoff and behaves exactly as intended once it ships.
+        </div>
+        <div class="bubble" style="margin-top:26px">
+          “I design at the seam between <b>aesthetics, psychology, and systems</b> — where good UI quietly becomes good business.”
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="powers">
+          <div class="power"><div class="num">PWR-01</div><h4>Behavioral UX</h4><p>Habit loops &amp; triggers engineered to cut friction and lift conversion.</p></div>
+          <div class="power"><div class="num">PWR-02</div><h4>Design Systems</h4><p>Tokens, variables, auto-layout — scalable from Figma to code.</p></div>
+          <div class="power"><div class="num">PWR-03</div><h4>Game UI / HUD</h4><p>High-density, high-feedback interfaces that stay legible under pressure.</p></div>
+          <div class="power"><div class="num">PWR-04</div><h4>Dev Handoff</h4><p>Engineering fluency → specs that ship without the back-and-forth.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORK / FEATURED ISSUES ============ -->
+<section id="work">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">FEATURED ISSUES</span>
+      <h3 class="reveal">SELECTED WORK</h3>
+    </div>
+    <div class="work-grid" id="workGrid" aria-live="polite"><!-- rendered from data --></div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact">
+  <div class="wrap">
+    <div class="panel contact-card reveal">
+      <div class="halftone"></div>
+      <div class="big">LET'S TEAM&nbsp;UP!</div>
+      <p>Got a product that deserves an interface people actually want to use? Let's make the next issue together.</p>
+      <div class="contact-actions">
+        <a href="mailto:hello@tezpi.design" class="cta" data-magnetic>EMAIL ME <span class="arrow">→</span></a>
+        <a href="#" class="cta cta--blue" data-magnetic>BEHANCE</a>
+        <a href="#" class="cta cta--ink" data-magnetic>LINKEDIN</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <span class="end">END OF ISSUE #01 — TO BE CONTINUED…</span>
+  TEZPI · Product Designer · Biên Hòa, Đồng Nai · Built with GSAP + Three.js
+</footer>
+
+<!-- backdrop for expanded card -->
+<div id="backdrop" aria-hidden="true"></div>
+
+<!-- ============ LIBRARIES (CDN) ============ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Draggable.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js"></script>
+
+<script src="script.js"></script>
+</body>
+</html>
